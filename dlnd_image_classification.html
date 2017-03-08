@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>dlnd_image_classification</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>dlnd_image_classification</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -13,8 +11,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1109,7 +1107,6 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2538,7 +2535,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3029,7 +3025,6 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8760,6 +8755,9 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
+[dir="rtl"] #ipython_notebook {
+  float: right !important;
+}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8962,8 +8960,14 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8986,6 +8990,16 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
+}
+[dir="rtl"] .list_toolbar .tree-buttons {
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9122,6 +9136,9 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
+[dir="rtl"] #tree-selector a {
+  float: right;
+}
 #button-select-all {
   min-width: 50px;
 }
@@ -9211,6 +9228,9 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
+[dir="rtl"] #new-menu {
+  text-align: right;
+}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9255,6 +9275,9 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
+}
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9551,6 +9574,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9571,11 +9595,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11246,7 +11265,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 20ex;
+  width: 21ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11558,6 +11577,7 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
+  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11571,6 +11591,9 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
+}
+.terminal-app .terminal .xterm-rows {
+  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11631,8 +11654,10 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11643,9 +11668,11 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11759,7 +11786,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -11805,14 +11832,18 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>CIFAR-10 Dataset: 171MB [04:46, 595KB/s]                           
+<pre>CIFAR-10 Dataset: 171MB [06:39, 427KB/s]                                                                               
 </pre>
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>All files found!
 </pre>
@@ -11849,7 +11880,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -11872,7 +11903,9 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 Stats of batch 1:
@@ -11888,7 +11921,9 @@ Label - Label Id: 1 Name: automobile
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -12046,7 +12081,7 @@ height=250
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -12072,7 +12107,9 @@ height=250
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -12096,7 +12133,7 @@ height=250
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">one_hot_encode</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -12125,7 +12162,9 @@ height=250
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -12158,7 +12197,7 @@ height=250
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -12185,7 +12224,7 @@ height=250
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -12242,7 +12281,7 @@ height=250
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
@@ -12290,7 +12329,9 @@ height=250
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Image Input Tests Passed.
 Label Input Tests Passed.
@@ -12329,7 +12370,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">conv2d_maxpool</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">,</span> <span class="n">conv_num_outputs</span><span class="p">,</span> <span class="n">conv_ksize</span><span class="p">,</span> <span class="n">conv_strides</span><span class="p">,</span> <span class="n">pool_ksize</span><span class="p">,</span> <span class="n">pool_strides</span><span class="p">):</span>
@@ -12366,7 +12407,9 @@ Keep Prob Tests Passed.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -12389,7 +12432,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">):</span>
@@ -12415,7 +12458,9 @@ Keep Prob Tests Passed.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -12438,7 +12483,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fully_conn</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">,</span> <span class="n">num_outputs</span><span class="p">):</span>
@@ -12466,7 +12511,9 @@ Keep Prob Tests Passed.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -12490,7 +12537,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">output</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">,</span> <span class="n">num_outputs</span><span class="p">):</span>
@@ -12500,7 +12547,7 @@ Keep Prob Tests Passed.
 <span class="sd">    : num_outputs: The number of output that the new tensor should be.</span>
 <span class="sd">    : return: A 2-D tensor where the second dimension is num_outputs.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">,</span><span class="n">num_outputs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">,</span><span class="n">num_outputs</span><span class="p">,</span><span class="n">activation_fn</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -12517,7 +12564,9 @@ Keep Prob Tests Passed.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -12548,7 +12597,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">conv_net</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">):</span>
@@ -12564,6 +12613,7 @@ Keep Prob Tests Passed.
 
     <span class="n">hidden_layer</span><span class="o">=</span><span class="n">conv2d_maxpool</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
     <span class="n">hidden_layer</span><span class="o">=</span><span class="n">conv2d_maxpool</span><span class="p">(</span><span class="n">hidden_layer</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">hidden_layer</span><span class="o">=</span><span class="n">conv2d_maxpool</span><span class="p">(</span><span class="n">hidden_layer</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
     
 
     <span class="c1"># TODO: Apply a Flatten Layer</span>
@@ -12574,13 +12624,17 @@ Keep Prob Tests Passed.
     <span class="c1"># TODO: Apply 1, 2, or 3 Fully Connected Layers</span>
     <span class="c1">#    Play around with different number of outputs</span>
     <span class="c1"># Function Definition from Above:</span>
-
-    <span class="n">hidden_layer</span><span class="o">=</span><span class="n">fully_conn</span><span class="p">(</span><span class="n">hidden_layer</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
-    <span class="c1">#hidden_layer=tf.nn.dropout(hidden_layer, keep_prob)</span>
-    <span class="c1"># TODO: Apply an Output Layer</span>
-    <span class="c1">#    Set this to the number of classes</span>
-    <span class="c1"># Function Definition from Above:</span>
     <span class="n">hidden_layer</span><span class="o">=</span><span class="n">flatten</span><span class="p">(</span><span class="n">hidden_layer</span><span class="p">)</span>
+    <span class="n">hidden_layer</span><span class="o">=</span><span class="n">fully_conn</span><span class="p">(</span><span class="n">hidden_layer</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+    
+    <span class="n">hidden_layer</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">hidden_layer</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">)</span>
+    <span class="n">hidden_layer</span><span class="o">=</span><span class="n">fully_conn</span><span class="p">(</span><span class="n">hidden_layer</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    
+    <span class="n">hidden_layer</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">hidden_layer</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">)</span>
+    <span class="n">hidden_layer</span><span class="o">=</span><span class="n">fully_conn</span><span class="p">(</span><span class="n">hidden_layer</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="c1"># TODO: Apply an Output Layer</span>
+    <span class="c1"># Set this to the number of classes</span>
+    <span class="c1"># Function Definition from Above:</span>
     <span class="n">x_tensor</span><span class="o">=</span><span class="n">output</span><span class="p">(</span><span class="n">hidden_layer</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
     
     
@@ -12629,7 +12683,9 @@ Keep Prob Tests Passed.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Neural Network Built!
 </pre>
@@ -12659,7 +12715,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">train_neural_network</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">keep_probability</span><span class="p">,</span> <span class="n">feature_batch</span><span class="p">,</span> <span class="n">label_batch</span><span class="p">):</span>
@@ -12671,16 +12727,19 @@ Keep Prob Tests Passed.
 <span class="sd">    : feature_batch: Batch of Numpy image data</span>
 <span class="sd">    : label_batch: Batch of Numpy label data</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">feature</span><span class="o">=</span><span class="n">neural_net_image_input</span><span class="p">(</span><span class="n">feature_batch</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-    <span class="n">label</span><span class="o">=</span><span class="n">neural_net_label_input</span><span class="p">(</span><span class="n">label_batch</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">probability</span><span class="o">=</span><span class="n">neural_net_keep_prob_input</span><span class="p">()</span>
-    <span class="n">prediction</span><span class="o">=</span><span class="n">conv_net</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span><span class="n">probability</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">neural_net_image_input</span><span class="p">((</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">neural_net_label_input</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">keep_prob</span> <span class="o">=</span> <span class="n">neural_net_keep_prob_input</span><span class="p">()</span>
+    <span class="c1">#feature=neural_net_image_input(feature_batch[0].shape)</span>
+    <span class="c1">#label=neural_net_label_input(label_batch[0].shape[0])</span>
+    <span class="c1">#probability=neural_net_keep_prob_input()</span>
+    <span class="n">prediction</span><span class="o">=</span><span class="n">conv_net</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">keep_prob</span><span class="p">)</span>
     <span class="c1">#print(type(feature))</span>
-    <span class="n">cross_entropy</span> <span class="o">=</span> <span class="o">-</span><span class="n">tf</span><span class="o">.</span><span class="n">reduce_sum</span><span class="p">(</span><span class="n">label</span> <span class="o">*</span> <span class="n">tf</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">prediction</span><span class="p">),</span> <span class="n">reduction_indices</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">cross_entropy</span> <span class="o">=</span> <span class="o">-</span><span class="n">tf</span><span class="o">.</span><span class="n">reduce_sum</span><span class="p">(</span><span class="n">y</span> <span class="o">*</span> <span class="n">tf</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">prediction</span><span class="p">),</span> <span class="n">reduction_indices</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">loss</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">cross_entropy</span><span class="p">)</span>
     <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
         <span class="p">[</span><span class="n">optimizer</span><span class="p">,</span> <span class="n">loss</span><span class="p">],</span>
-        <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">feature</span><span class="p">:</span><span class="n">feature_batch</span><span class="p">,</span> <span class="n">label</span><span class="p">:</span><span class="n">label_batch</span><span class="p">,</span><span class="n">probability</span><span class="p">:</span><span class="n">keep_probability</span><span class="p">})</span>
+        <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span> <span class="p">:</span> <span class="n">feature_batch</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">label_batch</span><span class="p">,</span> <span class="n">keep_prob</span> <span class="p">:</span> <span class="n">keep_probability</span><span class="p">})</span>
 
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -12697,7 +12756,9 @@ Keep Prob Tests Passed.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -12720,7 +12781,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_stats</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">feature_batch</span><span class="p">,</span> <span class="n">label_batch</span><span class="p">,</span> <span class="n">cost</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">):</span>
@@ -12734,10 +12795,10 @@ Keep Prob Tests Passed.
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">current_cost</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
         <span class="n">cost</span><span class="p">,</span>
-        <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">features</span><span class="p">:</span> <span class="n">feature_batch</span><span class="p">,</span> <span class="n">labels</span><span class="p">:</span> <span class="n">label_batch</span><span class="p">})</span>
+        <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">feature_batch</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">label_batch</span> <span class="p">,</span> <span class="n">keep_prob</span> <span class="p">:</span> <span class="mf">1.0</span><span class="p">})</span>
     <span class="n">valid_accuracy</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
         <span class="n">accuracy</span><span class="p">,</span>
-        <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">features</span><span class="p">:</span> <span class="n">valid_features</span><span class="p">,</span> <span class="n">labels</span><span class="p">:</span> <span class="n">valid_labels</span><span class="p">})</span>
+        <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">valid_features</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">valid_labels</span> <span class="p">,</span> <span class="n">keep_prob</span> <span class="p">:</span> <span class="mf">1.0</span><span class="p">})</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cost: </span><span class="si">{:&lt;8.3}</span><span class="s1"> Valid Accuracy: </span><span class="si">{:&lt;5.3}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
         <span class="n">current_cost</span><span class="p">,</span>
         <span class="n">valid_accuracy</span><span class="p">))</span>
@@ -12771,13 +12832,13 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Tune Parameters</span>
-<span class="n">epochs</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">128</span>
-<span class="n">keep_probability</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">keep_probability</span> <span class="o">=</span> <span class="mf">0.6</span>
 </pre></div>
 
 </div>
@@ -12797,7 +12858,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -12825,189 +12886,157 @@ Keep Prob Tests Passed.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Checking the Training on a Single Batch...
 </pre>
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_text output_error">
 <pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FailedPreconditionError</span>                   Traceback (most recent call last)
-<span class="ansi-green-fg">/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/client/session.py</span> in <span class="ansi-cyan-fg">_do_call</span><span class="ansi-blue-fg">(self, fn, *args)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1021</span>     <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">-&gt; 1022</span><span class="ansi-red-fg">       </span><span class="ansi-green-fg">return</span> fn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1023</span>     <span class="ansi-green-fg">except</span> errors<span class="ansi-blue-fg">.</span>OpError <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">FailedPreconditionError</span>                   Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\client\session.py</span> in <span class="ansi-cyan-fg">_do_call</span><span class="ansi-blue-intense-fg ansi-bold">(self, fn, *args)</span>
+<span class="ansi-green-fg">   1021</span>     <span class="ansi-green-intense-fg ansi-bold">try</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 1022</span><span class="ansi-yellow-intense-fg ansi-bold">       </span><span class="ansi-green-intense-fg ansi-bold">return</span> fn<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">   1023</span>     <span class="ansi-green-intense-fg ansi-bold">except</span> errors<span class="ansi-yellow-intense-fg ansi-bold">.</span>OpError <span class="ansi-green-intense-fg ansi-bold">as</span> e<span class="ansi-yellow-intense-fg ansi-bold">:</span>
 
-<span class="ansi-green-fg">/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/client/session.py</span> in <span class="ansi-cyan-fg">_run_fn</span><span class="ansi-blue-fg">(session, feed_dict, fetch_list, target_list, options, run_metadata)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1003</span>                                  feed_dict<span class="ansi-blue-fg">,</span> fetch_list<span class="ansi-blue-fg">,</span> target_list<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">-&gt; 1004</span><span class="ansi-red-fg">                                  status, run_metadata)
-</span><span class="ansi-green-intense-fg ansi-bold">   1005</span> 
+<span class="ansi-green-intense-fg ansi-bold">C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\client\session.py</span> in <span class="ansi-cyan-fg">_run_fn</span><span class="ansi-blue-intense-fg ansi-bold">(session, feed_dict, fetch_list, target_list, options, run_metadata)</span>
+<span class="ansi-green-fg">   1003</span>                                  feed_dict<span class="ansi-yellow-intense-fg ansi-bold">,</span> fetch_list<span class="ansi-yellow-intense-fg ansi-bold">,</span> target_list<span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 1004</span><span class="ansi-yellow-intense-fg ansi-bold">                                  status, run_metadata)
+</span><span class="ansi-green-fg">   1005</span> 
 
-<span class="ansi-green-fg">/home/origin/anaconda2/envs/tflearn/lib/python3.5/contextlib.py</span> in <span class="ansi-cyan-fg">__exit__</span><span class="ansi-blue-fg">(self, type, value, traceback)</span>
-<span class="ansi-green-intense-fg ansi-bold">     65</span>             <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 66</span><span class="ansi-red-fg">                 </span>next<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>gen<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     67</span>             <span class="ansi-green-fg">except</span> StopIteration<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\contextlib.py</span> in <span class="ansi-cyan-fg">__exit__</span><span class="ansi-blue-intense-fg ansi-bold">(self, type, value, traceback)</span>
+<span class="ansi-green-fg">     65</span>             <span class="ansi-green-intense-fg ansi-bold">try</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 66</span><span class="ansi-yellow-intense-fg ansi-bold">                 </span>next<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">.</span>gen<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">     67</span>             <span class="ansi-green-intense-fg ansi-bold">except</span> StopIteration<span class="ansi-yellow-intense-fg ansi-bold">:</span>
 
-<span class="ansi-green-fg">/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/framework/errors_impl.py</span> in <span class="ansi-cyan-fg">raise_exception_on_not_ok_status</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">    468</span>           compat<span class="ansi-blue-fg">.</span>as_text<span class="ansi-blue-fg">(</span>pywrap_tensorflow<span class="ansi-blue-fg">.</span>TF_Message<span class="ansi-blue-fg">(</span>status<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">--&gt; 469</span><span class="ansi-red-fg">           pywrap_tensorflow.TF_GetCode(status))
-</span><span class="ansi-green-intense-fg ansi-bold">    470</span>   <span class="ansi-green-fg">finally</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\framework\errors_impl.py</span> in <span class="ansi-cyan-fg">raise_exception_on_not_ok_status</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">    468</span>           compat<span class="ansi-yellow-intense-fg ansi-bold">.</span>as_text<span class="ansi-yellow-intense-fg ansi-bold">(</span>pywrap_tensorflow<span class="ansi-yellow-intense-fg ansi-bold">.</span>TF_Message<span class="ansi-yellow-intense-fg ansi-bold">(</span>status<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 469</span><span class="ansi-yellow-intense-fg ansi-bold">           pywrap_tensorflow.TF_GetCode(status))
+</span><span class="ansi-green-fg">    470</span>   <span class="ansi-green-intense-fg ansi-bold">finally</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
 
-<span class="ansi-red-fg">FailedPreconditionError</span>: Attempting to use uninitialized value fully_connected_7/biases
-	 [[Node: fully_connected_7/biases/read = Identity[T=DT_FLOAT, _class=[&#34;loc:@fully_connected_7/biases&#34;], _device=&#34;/job:localhost/replica:0/task:0/cpu:0&#34;](fully_connected_7/biases)]]
+<span class="ansi-red-intense-fg ansi-bold">FailedPreconditionError</span>: Attempting to use uninitialized value Variable_19
+	 [[Node: Variable_19/read = Identity[T=DT_FLOAT, _class=[&#34;loc:@Variable_19&#34;], _device=&#34;/job:localhost/replica:0/task:0/cpu:0&#34;](Variable_19)]]
 
 During handling of the above exception, another exception occurred:
 
-<span class="ansi-red-fg">FailedPreconditionError</span>                   Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-16-0ebd1bbc35ad&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span>         batch_i <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">1</span>
-<span class="ansi-green-intense-fg ansi-bold">     12</span>         <span class="ansi-green-fg">for</span> batch_features<span class="ansi-blue-fg">,</span> batch_labels <span class="ansi-green-fg">in</span> helper<span class="ansi-blue-fg">.</span>load_preprocess_training_batch<span class="ansi-blue-fg">(</span>batch_i<span class="ansi-blue-fg">,</span> batch_size<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 13</span><span class="ansi-red-fg">             </span>train_neural_network<span class="ansi-blue-fg">(</span>sess<span class="ansi-blue-fg">,</span> optimizer<span class="ansi-blue-fg">,</span> keep_probability<span class="ansi-blue-fg">,</span> batch_features<span class="ansi-blue-fg">,</span> batch_labels<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     14</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Epoch {:&gt;2}, CIFAR-10 Batch {}:  &#39;</span><span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span>epoch <span class="ansi-blue-fg">+</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> batch_i<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> end<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     15</span>         print_stats<span class="ansi-blue-fg">(</span>sess<span class="ansi-blue-fg">,</span> batch_features<span class="ansi-blue-fg">,</span> batch_labels<span class="ansi-blue-fg">,</span> cost<span class="ansi-blue-fg">,</span> accuracy<span class="ansi-blue-fg">)</span>
+<span class="ansi-red-intense-fg ansi-bold">FailedPreconditionError</span>                   Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-12-0ebd1bbc35ad&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">     11</span>         batch_i <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-cyan-intense-fg ansi-bold">1</span>
+<span class="ansi-green-fg">     12</span>         <span class="ansi-green-intense-fg ansi-bold">for</span> batch_features<span class="ansi-yellow-intense-fg ansi-bold">,</span> batch_labels <span class="ansi-green-intense-fg ansi-bold">in</span> helper<span class="ansi-yellow-intense-fg ansi-bold">.</span>load_preprocess_training_batch<span class="ansi-yellow-intense-fg ansi-bold">(</span>batch_i<span class="ansi-yellow-intense-fg ansi-bold">,</span> batch_size<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 13</span><span class="ansi-yellow-intense-fg ansi-bold">             </span>train_neural_network<span class="ansi-yellow-intense-fg ansi-bold">(</span>sess<span class="ansi-yellow-intense-fg ansi-bold">,</span> optimizer<span class="ansi-yellow-intense-fg ansi-bold">,</span> keep_probability<span class="ansi-yellow-intense-fg ansi-bold">,</span> batch_features<span class="ansi-yellow-intense-fg ansi-bold">,</span> batch_labels<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">     14</span>         print<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;Epoch {:&gt;2}, CIFAR-10 Batch {}:  &#39;</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>format<span class="ansi-yellow-intense-fg ansi-bold">(</span>epoch <span class="ansi-yellow-intense-fg ansi-bold">+</span> <span class="ansi-cyan-intense-fg ansi-bold">1</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> batch_i<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> end<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-blue-intense-fg ansi-bold">&#39;&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">     15</span>         print_stats<span class="ansi-yellow-intense-fg ansi-bold">(</span>sess<span class="ansi-yellow-intense-fg ansi-bold">,</span> batch_features<span class="ansi-yellow-intense-fg ansi-bold">,</span> batch_labels<span class="ansi-yellow-intense-fg ansi-bold">,</span> cost<span class="ansi-yellow-intense-fg ansi-bold">,</span> accuracy<span class="ansi-yellow-intense-fg ansi-bold">)</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-13-002574203581&gt;</span> in <span class="ansi-cyan-fg">train_neural_network</span><span class="ansi-blue-fg">(session, optimizer, keep_probability, feature_batch, label_batch)</span>
-<span class="ansi-green-intense-fg ansi-bold">     17</span>     session.run(
-<span class="ansi-green-intense-fg ansi-bold">     18</span>         <span class="ansi-blue-fg">[</span>optimizer<span class="ansi-blue-fg">,</span> loss<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">---&gt; 19</span><span class="ansi-red-fg">         feed_dict={feature:feature_batch, label:label_batch,probability:keep_probability})
-</span><span class="ansi-green-intense-fg ansi-bold">     20</span> 
-<span class="ansi-green-intense-fg ansi-bold">     21</span> 
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-9-04ff939d9ba5&gt;</span> in <span class="ansi-cyan-fg">train_neural_network</span><span class="ansi-blue-intense-fg ansi-bold">(session, optimizer, keep_probability, feature_batch, label_batch)</span>
+<span class="ansi-green-fg">     20</span>     session.run(
+<span class="ansi-green-fg">     21</span>         <span class="ansi-yellow-intense-fg ansi-bold">[</span>optimizer<span class="ansi-yellow-intense-fg ansi-bold">,</span> loss<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 22</span><span class="ansi-yellow-intense-fg ansi-bold">         feed_dict={x : feature_batch, y : label_batch, keep_prob : keep_probability})
+</span><span class="ansi-green-fg">     23</span> 
+<span class="ansi-green-fg">     24</span> 
 
-<span class="ansi-green-fg">/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/client/session.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(self, fetches, feed_dict, options, run_metadata)</span>
-<span class="ansi-green-intense-fg ansi-bold">    765</span>     <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    766</span>       result = self._run(None, fetches, feed_dict, options_ptr,
-<span class="ansi-green-fg">--&gt; 767</span><span class="ansi-red-fg">                          run_metadata_ptr)
-</span><span class="ansi-green-intense-fg ansi-bold">    768</span>       <span class="ansi-green-fg">if</span> run_metadata<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    769</span>         proto_data <span class="ansi-blue-fg">=</span> tf_session<span class="ansi-blue-fg">.</span>TF_GetBuffer<span class="ansi-blue-fg">(</span>run_metadata_ptr<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\client\session.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-intense-fg ansi-bold">(self, fetches, feed_dict, options, run_metadata)</span>
+<span class="ansi-green-fg">    765</span>     <span class="ansi-green-intense-fg ansi-bold">try</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    766</span>       result = self._run(None, fetches, feed_dict, options_ptr,
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 767</span><span class="ansi-yellow-intense-fg ansi-bold">                          run_metadata_ptr)
+</span><span class="ansi-green-fg">    768</span>       <span class="ansi-green-intense-fg ansi-bold">if</span> run_metadata<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    769</span>         proto_data <span class="ansi-yellow-intense-fg ansi-bold">=</span> tf_session<span class="ansi-yellow-intense-fg ansi-bold">.</span>TF_GetBuffer<span class="ansi-yellow-intense-fg ansi-bold">(</span>run_metadata_ptr<span class="ansi-yellow-intense-fg ansi-bold">)</span>
 
-<span class="ansi-green-fg">/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/client/session.py</span> in <span class="ansi-cyan-fg">_run</span><span class="ansi-blue-fg">(self, handle, fetches, feed_dict, options, run_metadata)</span>
-<span class="ansi-green-intense-fg ansi-bold">    963</span>     <span class="ansi-green-fg">if</span> final_fetches <span class="ansi-green-fg">or</span> final_targets<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    964</span>       results = self._do_run(handle, final_targets, final_fetches,
-<span class="ansi-green-fg">--&gt; 965</span><span class="ansi-red-fg">                              feed_dict_string, options, run_metadata)
-</span><span class="ansi-green-intense-fg ansi-bold">    966</span>     <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    967</span>       results <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">]</span>
+<span class="ansi-green-intense-fg ansi-bold">C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\client\session.py</span> in <span class="ansi-cyan-fg">_run</span><span class="ansi-blue-intense-fg ansi-bold">(self, handle, fetches, feed_dict, options, run_metadata)</span>
+<span class="ansi-green-fg">    963</span>     <span class="ansi-green-intense-fg ansi-bold">if</span> final_fetches <span class="ansi-green-intense-fg ansi-bold">or</span> final_targets<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    964</span>       results = self._do_run(handle, final_targets, final_fetches,
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 965</span><span class="ansi-yellow-intense-fg ansi-bold">                              feed_dict_string, options, run_metadata)
+</span><span class="ansi-green-fg">    966</span>     <span class="ansi-green-intense-fg ansi-bold">else</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    967</span>       results <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-yellow-intense-fg ansi-bold">]</span>
 
-<span class="ansi-green-fg">/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/client/session.py</span> in <span class="ansi-cyan-fg">_do_run</span><span class="ansi-blue-fg">(self, handle, target_list, fetch_list, feed_dict, options, run_metadata)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1013</span>     <span class="ansi-green-fg">if</span> handle <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1014</span>       return self._do_call(_run_fn, self._session, feed_dict, fetch_list,
-<span class="ansi-green-fg">-&gt; 1015</span><span class="ansi-red-fg">                            target_list, options, run_metadata)
-</span><span class="ansi-green-intense-fg ansi-bold">   1016</span>     <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1017</span>       return self._do_call(_prun_fn, self._session, handle, feed_dict,
+<span class="ansi-green-intense-fg ansi-bold">C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\client\session.py</span> in <span class="ansi-cyan-fg">_do_run</span><span class="ansi-blue-intense-fg ansi-bold">(self, handle, target_list, fetch_list, feed_dict, options, run_metadata)</span>
+<span class="ansi-green-fg">   1013</span>     <span class="ansi-green-intense-fg ansi-bold">if</span> handle <span class="ansi-green-intense-fg ansi-bold">is</span> <span class="ansi-green-intense-fg ansi-bold">None</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">   1014</span>       return self._do_call(_run_fn, self._session, feed_dict, fetch_list,
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 1015</span><span class="ansi-yellow-intense-fg ansi-bold">                            target_list, options, run_metadata)
+</span><span class="ansi-green-fg">   1016</span>     <span class="ansi-green-intense-fg ansi-bold">else</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">   1017</span>       return self._do_call(_prun_fn, self._session, handle, feed_dict,
 
-<span class="ansi-green-fg">/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/client/session.py</span> in <span class="ansi-cyan-fg">_do_call</span><span class="ansi-blue-fg">(self, fn, *args)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1033</span>         <span class="ansi-green-fg">except</span> KeyError<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1034</span>           <span class="ansi-green-fg">pass</span>
-<span class="ansi-green-fg">-&gt; 1035</span><span class="ansi-red-fg">       </span><span class="ansi-green-fg">raise</span> type<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">(</span>node_def<span class="ansi-blue-fg">,</span> op<span class="ansi-blue-fg">,</span> message<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1036</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1037</span>   <span class="ansi-green-fg">def</span> _extend_graph<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\client\session.py</span> in <span class="ansi-cyan-fg">_do_call</span><span class="ansi-blue-intense-fg ansi-bold">(self, fn, *args)</span>
+<span class="ansi-green-fg">   1033</span>         <span class="ansi-green-intense-fg ansi-bold">except</span> KeyError<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">   1034</span>           <span class="ansi-green-intense-fg ansi-bold">pass</span>
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 1035</span><span class="ansi-yellow-intense-fg ansi-bold">       </span><span class="ansi-green-intense-fg ansi-bold">raise</span> type<span class="ansi-yellow-intense-fg ansi-bold">(</span>e<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">(</span>node_def<span class="ansi-yellow-intense-fg ansi-bold">,</span> op<span class="ansi-yellow-intense-fg ansi-bold">,</span> message<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">   1036</span> 
+<span class="ansi-green-fg">   1037</span>   <span class="ansi-green-intense-fg ansi-bold">def</span> _extend_graph<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
 
-<span class="ansi-red-fg">FailedPreconditionError</span>: Attempting to use uninitialized value fully_connected_7/biases
-	 [[Node: fully_connected_7/biases/read = Identity[T=DT_FLOAT, _class=[&#34;loc:@fully_connected_7/biases&#34;], _device=&#34;/job:localhost/replica:0/task:0/cpu:0&#34;](fully_connected_7/biases)]]
+<span class="ansi-red-intense-fg ansi-bold">FailedPreconditionError</span>: Attempting to use uninitialized value Variable_19
+	 [[Node: Variable_19/read = Identity[T=DT_FLOAT, _class=[&#34;loc:@Variable_19&#34;], _device=&#34;/job:localhost/replica:0/task:0/cpu:0&#34;](Variable_19)]]
 
-Caused by op &#39;fully_connected_7/biases/read&#39;, defined at:
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/runpy.py&#34;, line 184, in _run_module_as_main
+Caused by op &#39;Variable_19/read&#39;, defined at:
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\runpy.py&#34;, line 193, in _run_module_as_main
     &#34;__main__&#34;, mod_spec)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/runpy.py&#34;, line 85, in _run_code
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\runpy.py&#34;, line 85, in _run_code
     exec(code, run_globals)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/ipykernel/__main__.py&#34;, line 3, in &lt;module&gt;
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\ipykernel\__main__.py&#34;, line 3, in &lt;module&gt;
     app.launch_new_instance()
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/traitlets/config/application.py&#34;, line 658, in launch_instance
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\traitlets\config\application.py&#34;, line 658, in launch_instance
     app.start()
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/ipykernel/kernelapp.py&#34;, line 474, in start
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\ipykernel\kernelapp.py&#34;, line 474, in start
     ioloop.IOLoop.instance().start()
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/zmq/eventloop/ioloop.py&#34;, line 177, in start
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\zmq\eventloop\ioloop.py&#34;, line 177, in start
     super(ZMQIOLoop, self).start()
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tornado/ioloop.py&#34;, line 887, in start
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tornado\ioloop.py&#34;, line 887, in start
     handler_func(fd_obj, events)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tornado/stack_context.py&#34;, line 275, in null_wrapper
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tornado\stack_context.py&#34;, line 275, in null_wrapper
     return fn(*args, **kwargs)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/zmq/eventloop/zmqstream.py&#34;, line 440, in _handle_events
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\zmq\eventloop\zmqstream.py&#34;, line 440, in _handle_events
     self._handle_recv()
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/zmq/eventloop/zmqstream.py&#34;, line 472, in _handle_recv
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\zmq\eventloop\zmqstream.py&#34;, line 472, in _handle_recv
     self._run_callback(callback, msg)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/zmq/eventloop/zmqstream.py&#34;, line 414, in _run_callback
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\zmq\eventloop\zmqstream.py&#34;, line 414, in _run_callback
     callback(*args, **kwargs)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tornado/stack_context.py&#34;, line 275, in null_wrapper
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tornado\stack_context.py&#34;, line 275, in null_wrapper
     return fn(*args, **kwargs)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/ipykernel/kernelbase.py&#34;, line 276, in dispatcher
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\ipykernel\kernelbase.py&#34;, line 276, in dispatcher
     return self.dispatch_shell(stream, msg)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/ipykernel/kernelbase.py&#34;, line 228, in dispatch_shell
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\ipykernel\kernelbase.py&#34;, line 228, in dispatch_shell
     handler(stream, idents, msg)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/ipykernel/kernelbase.py&#34;, line 390, in execute_request
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\ipykernel\kernelbase.py&#34;, line 390, in execute_request
     user_expressions, allow_stdin)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/ipykernel/ipkernel.py&#34;, line 196, in do_execute
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\ipykernel\ipkernel.py&#34;, line 196, in do_execute
     res = shell.run_cell(code, store_history=store_history, silent=silent)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/ipykernel/zmqshell.py&#34;, line 501, in run_cell
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\ipykernel\zmqshell.py&#34;, line 501, in run_cell
     return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/IPython/core/interactiveshell.py&#34;, line 2717, in run_cell
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\IPython\core\interactiveshell.py&#34;, line 2717, in run_cell
     interactivity=interactivity, compiler=compiler, result=result)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/IPython/core/interactiveshell.py&#34;, line 2821, in run_ast_nodes
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\IPython\core\interactiveshell.py&#34;, line 2821, in run_ast_nodes
     if self.run_code(code, result):
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/IPython/core/interactiveshell.py&#34;, line 2881, in run_code
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\IPython\core\interactiveshell.py&#34;, line 2881, in run_code
     exec(code_obj, self.user_global_ns, self.user_ns)
-  File &#34;&lt;ipython-input-16-0ebd1bbc35ad&gt;&#34;, line 13, in &lt;module&gt;
+  File &#34;&lt;ipython-input-12-0ebd1bbc35ad&gt;&#34;, line 13, in &lt;module&gt;
     train_neural_network(sess, optimizer, keep_probability, batch_features, batch_labels)
-  File &#34;&lt;ipython-input-13-002574203581&gt;&#34;, line 13, in train_neural_network
-    prediction=conv_net(feature,probability)
-  File &#34;&lt;ipython-input-12-3efdd7bb4a65&gt;&#34;, line 31, in conv_net
-    x_tensor=output(hidden_layer, 10)
-  File &#34;&lt;ipython-input-6-8f454fc7b477&gt;&#34;, line 8, in output
-    return tf.contrib.layers.fully_connected(x_tensor,num_outputs)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/contrib/framework/python/ops/arg_scope.py&#34;, line 177, in func_with_args
-    return func(*args, **current_args)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/contrib/layers/python/layers/layers.py&#34;, line 1409, in fully_connected
-    outputs = layer.apply(inputs)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/layers/base.py&#34;, line 303, in apply
-    return self.__call__(inputs, **kwargs)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/layers/base.py&#34;, line 269, in __call__
-    self.build(input_shapes[0])
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/layers/core.py&#34;, line 130, in build
-    trainable=True)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/ops/variable_scope.py&#34;, line 988, in get_variable
-    custom_getter=custom_getter)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/ops/variable_scope.py&#34;, line 890, in get_variable
-    custom_getter=custom_getter)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/ops/variable_scope.py&#34;, line 341, in get_variable
-    validate_shape=validate_shape)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/layers/base.py&#34;, line 258, in variable_getter
-    variable_getter=functools.partial(getter, **kwargs))
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/layers/base.py&#34;, line 208, in _add_variable
-    trainable=trainable and self.trainable)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/contrib/layers/python/layers/layers.py&#34;, line 1310, in layer_variable_getter
-    return _model_variable_getter(getter, *args, **kwargs)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/contrib/layers/python/layers/layers.py&#34;, line 1299, in _model_variable_getter
-    custom_getter=getter)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/contrib/framework/python/ops/arg_scope.py&#34;, line 177, in func_with_args
-    return func(*args, **current_args)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/contrib/framework/python/ops/variables.py&#34;, line 268, in model_variable
-    partitioner=partitioner, custom_getter=custom_getter)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/contrib/framework/python/ops/arg_scope.py&#34;, line 177, in func_with_args
-    return func(*args, **current_args)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/contrib/framework/python/ops/variables.py&#34;, line 225, in variable
-    partitioner=partitioner)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/ops/variable_scope.py&#34;, line 333, in _true_getter
-    caching_device=caching_device, validate_shape=validate_shape)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/ops/variable_scope.py&#34;, line 684, in _get_single_variable
-    validate_shape=validate_shape)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/ops/variables.py&#34;, line 226, in __init__
+  File &#34;&lt;ipython-input-9-04ff939d9ba5&gt;&#34;, line 16, in train_neural_network
+    prediction=conv_net(x,keep_prob)
+  File &#34;&lt;ipython-input-8-6d35a74fecee&gt;&#34;, line 12, in conv_net
+    hidden_layer=conv2d_maxpool(x, 20, (5,5), (1,1), (2,2), (2,2))
+  File &#34;&lt;ipython-input-4-804f9a641c31&gt;&#34;, line 13, in conv2d_maxpool
+    bias = tf.Variable(tf.zeros(conv_num_outputs))
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\ops\variables.py&#34;, line 226, in __init__
     expected_shape=expected_shape)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/ops/variables.py&#34;, line 344, in _init_from_args
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\ops\variables.py&#34;, line 344, in _init_from_args
     self._snapshot = array_ops.identity(self._variable, name=&#34;read&#34;)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/ops/gen_array_ops.py&#34;, line 1490, in identity
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\ops\gen_array_ops.py&#34;, line 1490, in identity
     result = _op_def_lib.apply_op(&#34;Identity&#34;, input=input, name=name)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py&#34;, line 763, in apply_op
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\framework\op_def_library.py&#34;, line 763, in apply_op
     op_def=op_def)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/framework/ops.py&#34;, line 2395, in create_op
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\framework\ops.py&#34;, line 2395, in create_op
     original_op=self._default_original_op, op_def=op_def)
-  File &#34;/home/origin/anaconda2/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/framework/ops.py&#34;, line 1264, in __init__
+  File &#34;C:\Users\dhlzh\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\framework\ops.py&#34;, line 1264, in __init__
     self._traceback = _extract_stack()
 
-FailedPreconditionError (see above for traceback): Attempting to use uninitialized value fully_connected_7/biases
-	 [[Node: fully_connected_7/biases/read = Identity[T=DT_FLOAT, _class=[&#34;loc:@fully_connected_7/biases&#34;], _device=&#34;/job:localhost/replica:0/task:0/cpu:0&#34;](fully_connected_7/biases)]]
+FailedPreconditionError (see above for traceback): Attempting to use uninitialized value Variable_19
+	 [[Node: Variable_19/read = Identity[T=DT_FLOAT, _class=[&#34;loc:@Variable_19&#34;], _device=&#34;/job:localhost/replica:0/task:0/cpu:0&#34;](Variable_19)]]
 </pre>
 </div>
 </div>
@@ -13028,7 +13057,7 @@ FailedPreconditionError (see above for traceback): Attempting to use uninitializ
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -13057,6 +13086,40 @@ FailedPreconditionError (see above for traceback): Attempting to use uninitializ
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Training...
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-1-9df3032ebe9d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      5</span> 
+<span class="ansi-green-fg">      6</span> print<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;Training...&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 7</span><span class="ansi-yellow-intense-fg ansi-bold"> </span><span class="ansi-green-intense-fg ansi-bold">with</span> tf<span class="ansi-yellow-intense-fg ansi-bold">.</span>Session<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-green-intense-fg ansi-bold">as</span> sess<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">      8</span>     <span class="ansi-red-intense-fg ansi-bold"># Initializing the variables</span>
+<span class="ansi-green-fg">      9</span>     sess<span class="ansi-yellow-intense-fg ansi-bold">.</span>run<span class="ansi-yellow-intense-fg ansi-bold">(</span>tf<span class="ansi-yellow-intense-fg ansi-bold">.</span>global_variables_initializer<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;tf&#39; is not defined</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13161,4 +13224,8 @@ FailedPreconditionError (see above for traceback): Attempting to use uninitializ
     </div>
   </div>
 </body>
+
+ 
+
+
 </html>
